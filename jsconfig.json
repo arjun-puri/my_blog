@@ -1,0 +1,23 @@
+// these are the path aliases in order to prevent us from writing long relative paths.
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/components/*": [
+                "components/*"
+            ],
+            "@/data/*": [
+                "data/*"
+            ],
+            "@/layouts/*": [
+                "layouts/*"
+            ],
+            "@/lib/*": [
+                "lib/*"
+            ],
+            "@/styles/*": [
+                "styles/*"
+            ]
+        }
+    }
+}
