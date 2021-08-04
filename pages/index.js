@@ -7,17 +7,15 @@ import BlogPost from '@/components/BlogPost/BlogPost';
 export default function Home() {
   return (
     <Container>
-      {/* <h1 className='text-6xl font-bold text-primary mb-8'>Hello world!</h1>
-      <p  className="text-xl text-gray-600">This is some sample text to test out the site colors.</p> */}
-      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto mb-16'>
-        <h1 className='font-bold text-4xl md:text-6xl mb-4 text-gray-900'>
+      <div className='flex flex-col justify-center items-start max-w-4xl mx-auto mb-8 w-full bg-paperback p-8 md:px-24'>
+        <h1 className='font-bold text-3xl md:text-6xl mb-4 text-secondary-0 tracking-tight'>
           Arjun Puri
         </h1>
-        <h2 className='prose md:text-xl text-gray-800 mb-16'>
-          I am a developer and writer. I work as a Junior Associate at Publicis
-          Sapient.
+        <h2 className='prose md:text-xl mb-16 text-tertiary-0'>
+          I am a developer and writer. Currently working as a Junior Associate
+          at Publicis Sapient.
         </h2>
-        <h3 className='font-bold mb-2 text-2xl md:text-4xl text-gray-900'>
+        <h3 className='font-bold mb-2 text-xl md:text-4xl text-secondary-0'>
           Most Popular
         </h3>
         {/* example blogposts */}

@@ -13,9 +13,9 @@ export default function BlogLayout({ children, frontMatter }) {
       date={new Date(frontMatter.publishedAt).toISOString()}
       type='article'
     >
-      <article className='flex flex-col justify-center items-start max-w-4xl mx-auto mb-16 w-full bg-paperback px-8 md:px-24'>
+      <article className='flex flex-col justify-center items-start max-w-4xl mx-auto mb-8 w-full bg-paperback p-8 md:px-24'>
         {/* title */}
-        <h1 className='font-bold text-3xl md:text-6xl mb-4 text-secondary-0'>
+        <h1 className='font-bold text-3xl md:text-6xl mb-4 text-secondary-0 tracking-tight'>
           {frontMatter.title}
         </h1>
         {/* Author name, image, views and reading time */}
@@ -46,7 +46,7 @@ export default function BlogLayout({ children, frontMatter }) {
           </p>
         </div>
         {/* blog content */}
-        <div className='prose prose-xl max-w-none w-full'>{children}</div>
+        <div className='prose md:prose-lg max-w-none w-full'>{children}</div>
       </article>
     </Container>
   );

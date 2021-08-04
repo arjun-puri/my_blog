@@ -17,11 +17,28 @@ body {
   src: url('/fonts/Space_Mono/SpaceMono-Regular.ttf');
 }
 
-/* MDX related styling */
-.prose {
-  @apply text-base;
+h1,
+h2,
+h3,
+h4 {
+  @apply text-secondary-0;
+  font-family: 'BioRhyme';
 }
 
+/* MDX related styling */
+.prose {
+  @apply text-base text-tertiary-0;
+  font-family: 'Space Mono';
+}
+
+/* headings */
+.prose h2,
+h3,
+h4 {
+  @apply text-secondary-0;
+  font-family: 'BioRhyme';
+  scroll-margin-top: 8rem;
+}
 .prose h2 {
   @apply text-2xl;
 }
@@ -62,15 +79,35 @@ body {
 }
 
 .prose a {
-  @apply font-bold;
+  @apply font-bold text-primary-0;
+}
+
+.prose a:hover {
+  @apply text-tertiary-100;
+}
+
+.prose a code {
+  @apply text-primary-0;
+}
+
+.prose ul > li::before {
+  @apply bg-tertiary-0;
+}
+
+.prose ol > li::before {
+  @apply text-tertiary-0;
+}
+
+.prose blockquote {
+  @apply border-primary-100;
 }
 
 .prose pre {
-  @apply border border-gray-200 bg-gray-50;
+  @apply border border-dracula-aro bg-secondary-0;
 }
 
 .prose code {
-  @apply text-gray-800 px-1 py-0.5 border border-gray-100 rounded-md bg-gray-100;
+  @apply text-dracula-cullen px-1 py-0.5 border border-dracula-aro rounded-md bg-dracula-nosferatu;
 }
 
 .prose img {
@@ -88,11 +125,11 @@ body {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-gray-700;
+  @apply text-dracula-blade;
 }
 
 .token.punctuation {
-  @apply text-gray-700;
+  @apply text-secondary-100;
 }
 
 .token.property,
@@ -102,7 +139,7 @@ body {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-500;
+  @apply text-dracula-buffy;
 }
 
 .token.selector,
@@ -111,7 +148,7 @@ body {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-purple-500;
+  @apply text-dracula-lincoln;
 }
 
 .token.operator,
@@ -119,29 +156,29 @@ body {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  @apply text-yellow-500;
+  @apply text-dracula-lincoln;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  @apply text-blue-500;
+  @apply text-dracula-dracula;
 }
 
 .token.function,
 .token.class-name {
-  @apply text-pink-500;
+  @apply text-secondary-200;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  @apply text-yellow-500;
+  @apply text-dracula-buffy;
 }
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply text-gray-800;
+  @apply text-dracula-cullen;
 }
 
 pre::-webkit-scrollbar {

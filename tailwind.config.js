@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'blue-opaque': 'rgb(13 42 148 / 18%)',
+        // 'blue-opaque': 'rgb(13 42 148 / 18%)',
         // beige
         paperback: '#f3f3d8',
         // orange
@@ -18,44 +18,40 @@ module.exports = {
         'secondary-100': '#BC9EC1',
         'secondary-0': '#514663',
         // greens (bluish)
-        'tertiary-200': '#5B8E7D',
+        // 'tertiary-200': '#5B8E7D',
         'tertiary-100': '#2C8C99',
         'tertiary-0': '#17494F',
+        // dracula colors
+        // 'dracula-darker': '#282a36',
+        // 'dracula-dark': '#44475a',
+        // 'dracula-light': '#f8f8f2',
+        // 'dracula-blue': '#6272a4',
+        // 'dracula-cyan': '#8be9fd',
+        // 'dracula-green': '#50fa7b',
+        // 'dracula-orange': '#ffb86c',
+        // 'dracula-pink': '#ff79c6',
+        // 'dracula-purple': '#bd93f9',
+        // 'dracula-red': '#ff5555',
+        // 'dracula-yellow': '#f1fa8c',
+        'dracula-nosferatu': '#282a36',
+        'dracula-aro': '#44475a',
+        'dracula-cullen': '#f8f8f2',
+        'dracula-vonCount': '#6272a4',
+        'dracula-vanHelsing': '#8be9fd',
+        'dracula-blade': '#50fa7b',
+        'dracula-morbius': '#ffb86c',
+        'dracula-buffy': '#ff79c6',
+        'dracula-dracula': '#bd93f9',
+        'dracula-marcelin': '#ff5555',
+        'dracula-lincoln': '#f1fa8c',
       },
       fontFamily: {
         sans: ['Space Mono', 'Raleway', ...fontFamily.sans],
       },
+      // some of the changes are kept here and some in the global.css
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            // to preserve width and break words with hyphens
-            // 'word-break': 'break-word',
-            color: theme('colors.tertiary-0'),
-            'font-family': 'Space Mono',
-            a: {
-              color: theme('colors.primary-0'),
-              '&:hover': {
-                color: theme('colors.tertiary-100'),
-              },
-              code: { color: theme('colors.primary-0') },
-            },
-            'h2,h3,h4': {
-              color: theme('colors.secondary-0'),
-              'font-family': 'BioRhyme',
-              'scroll-margin-top': spacing[32],
-            },
-            'ul > li::before': {
-              'background-color': theme('colors.tertiary-0'),
-            },
-            'ol > li::before': {
-              color: theme('colors.tertiary-0'),
-            },
-            blockquote: {
-              'border-color': theme('colors.primary-100'),
-            },
-            code: {
-              color: theme('colors.pink.500'),
-            },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
           },

@@ -12,7 +12,7 @@ const BlogPost = ({ title, summary, slug }) => {
       <a className='w-full'>
         <div className='mb-8 w-full'>
           <div className='flex flex-col md:flex-row justify-between'>
-            <h4 className='md:text-xl font-medium mb-2 w-full text-gray-900'>
+            <h4 className='md:text-xl font-bold mb-2 w-full text-primary-0'>
               {title}
             </h4>
             {/* not using ViewCounter here as to not increase the counter when the user is just on the landing page and is just viewing the summary */}
