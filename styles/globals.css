@@ -35,20 +35,19 @@ h4 {
 .prose h2,
 h3,
 h4 {
-  @apply text-secondary-0;
   font-family: 'BioRhyme';
   scroll-margin-top: 8rem;
 }
 .prose h2 {
-  @apply text-2xl;
+  @apply text-2xl text-secondary-0;
 }
 
 .prose h3 {
-  @apply text-xl;
+  @apply text-xl text-secondary-0;
 }
 
 .prose h4 {
-  @apply text-lg;
+  @apply text-lg text-secondary-0;
 }
 
 .prose .anchor {

@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 // import Footer from '@/components/Footer';
 
@@ -13,6 +16,12 @@ export default function Container(props) {
     // image: 'https://leerob.io/static/images/banner.png', //change this
     type: 'website',
     ...customMeta,
+  };
+
+  // handling hamburger button functionality
+  const [hamburgerClicked, setHamburgerClicked] = useState(false);
+  const hamburgerBtnHandler = () =>{
+    setHamburgerClicked(!hamburgerClicked);
   };
 
   return (
@@ -35,7 +44,7 @@ export default function Container(props) {
         )}
       </Head>
       {/* outer div is to keep it in a fixed width on mobiles */}
-      <div className='flex flex-col justify-center px-4 md:p-0  bg-secondary-100'>
+      <div className='flex flex-col justify-center px-4 md:p-0 md:mx-4 bg-secondary-100'>
         <nav className='flex items-center justify-between w-full max-w-4xl p-0 mx-auto my-0 bg-paperback sticky-nav md:mt-8'>
           {/* skip to content navigation link */}
           <a href='#mainContent' className='skip-nav sr-only'>
@@ -44,26 +53,26 @@ export default function Container(props) {
           {/* Logo / site title */}
           <div className='flex p-4 pl-8 md:pl-24 rounded-br-full bg-primary-0 w-full'>
             <h1 className='font-bold text-3xl md:text-5xl text-paperback tracking-tighter'>
-              Arjun Puri.
+              Arjun Puri
             </h1>
           </div>
           {/* hamburger button */}
-          <button id='hamburgerBtn' className='md:hidden'>
-            X
+          <button className='md:hidden px-8' onClick={hamburgerBtnHandler}>
+            <FontAwesomeIcon size={'2x'} icon={faBars}/>
           </button>
-          <div className='p-2 w-full flex items-center justify-center sm:hidden md:flex'>
+          <div className={`bg-dracula-morbius fixed overflow-hidden top-16 py-4 right-4 flex flex-col w-32 rounded-l-full ${hamburgerClicked ? 'visible' : 'w-0 invisible'} md:p-2 md:w-full md:static md:visible md:bg-paperback items-center justify-center md:flex-row transition-all duration-500 `}>
             <Link href='/blog'>
-              <a className='px-4 md:px-8 text-tertiary-100 font-bold md:text-xl '>
+              <a className='pr-6 pl-8 py-2 md:px-8 text-tertiary-100 font-bold md:text-xl '>
                 Blog
               </a>
             </Link>
             <Link href='/about'>
-              <a className='px-4 md:px-8 text-tertiary-100 font-bold md:text-xl '>
+              <a className='pr-6 pl-8 py-2 md:px-8 text-tertiary-100 font-bold md:text-xl '>
                 About
               </a>
             </Link>
             <Link href='/'>
-              <a className='px-4 md:px-8 text-tertiary-100 font-bold md:text-xl '>
+              <a className='pr-6 pl-8 py-2 md:px-8 text-tertiary-100 font-bold md:text-xl '>
                 Home
               </a>
             </Link>

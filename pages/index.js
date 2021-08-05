@@ -9,7 +9,7 @@ export default function Home() {
     <Container>
       <div className='flex flex-col justify-center items-start max-w-4xl mx-auto mb-8 w-full bg-paperback p-8 md:px-24'>
         <h1 className='font-bold text-3xl md:text-6xl mb-4 text-secondary-0 tracking-tight'>
-          Arjun Puri
+          Hello!
         </h1>
         <h2 className='prose md:text-xl mb-16 text-tertiary-0'>
           I am a developer and writer. Currently working as a Junior Associate
