@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 // import Footer from '@/components/Footer';
@@ -44,7 +44,7 @@ export default function Container(props) {
         )}
       </Head>
       {/* outer div is to keep it in a fixed width on mobiles */}
-      <div className='flex flex-col justify-center px-4 md:p-0 md:mx-4 bg-secondary-100'>
+      <div className='sticky z- top-0 flex flex-col justify-center px-4 md:p-0 md:mx-4 bg-secondary-100'>
         <nav className='flex items-center justify-between w-full max-w-4xl p-0 mx-auto my-0 bg-paperback sticky-nav md:mt-8'>
           {/* skip to content navigation link */}
           <a href='#mainContent' className='skip-nav sr-only'>
@@ -58,21 +58,21 @@ export default function Container(props) {
           </div>
           {/* hamburger button */}
           <button className='md:hidden px-8' onClick={hamburgerBtnHandler}>
-            <FontAwesomeIcon size={'2x'} icon={faBars}/>
+            <FontAwesomeIcon size={'2x'} className="text-tertiary-0 fa-fw transition-all duration-300" icon={hamburgerClicked ? faTimes :faBars}/>
           </button>
-          <div className={`bg-dracula-morbius fixed overflow-hidden top-16 py-4 right-4 flex flex-col w-32 rounded-l-full ${hamburgerClicked ? 'visible' : 'w-0 invisible'} md:p-2 md:w-full md:static md:visible md:bg-paperback items-center justify-center md:flex-row transition-all duration-500 `}>
+          <div className={`bg-primary-100 fixed overflow-hidden top-16 py-4 right-4 flex flex-col w-32  rounded-l-full ${hamburgerClicked ? 'visible' : 'w-0 invisible'} md:p-2 md:w-full md:static md:visible md:bg-paperback items-center justify-center md:flex-row transition-all duration-500 `}> 
             <Link href='/blog'>
-              <a className='pr-6 pl-8 py-2 md:px-8 text-tertiary-100 font-bold md:text-xl '>
+              <a className='pr-4 pl-8 py-2 md:px-8 text-paperback md:text-tertiary-100 font-bold md:text-xl '>
                 Blog
               </a>
             </Link>
             <Link href='/about'>
-              <a className='pr-6 pl-8 py-2 md:px-8 text-tertiary-100 font-bold md:text-xl '>
+            <a className='pr-4 pl-8 py-2 md:px-8 text-paperback md:text-tertiary-100 font-bold md:text-xl '>
                 About
               </a>
             </Link>
             <Link href='/'>
-              <a className='pr-6 pl-8 py-2 md:px-8 text-tertiary-100 font-bold md:text-xl '>
+            <a className='pr-4 pl-8 py-2 md:px-8 text-paperback md:text-tertiary-100 font-bold md:text-xl '>
                 Home
               </a>
             </Link>

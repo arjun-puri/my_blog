@@ -1,8 +1,8 @@
 import Link from 'next/link';
 // components
 // import { Header } from '../components/Header/Header';
-import Container from '@/components/Container/Container';
-import BlogPost from '@/components/BlogPost/BlogPost';
+import Container from '@/components/Container';
+import BlogPost from '@/components/BlogPost';
 
 export default function Home() {
   return (
