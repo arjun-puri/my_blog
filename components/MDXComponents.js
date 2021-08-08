@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import CodePenEmbed from '@/components/CodePenEmbed';
+
 const CustomLink = (props) => {
     const href = props.href;
     const isInternalLink = href && (href.startsWith('/')) || href.startsWith('#');
@@ -8,7 +10,7 @@ const CustomLink = (props) => {
     if(isInternalLink){
         return (
             <Link href={href}>
-                <a {...props}>{props.children}</a>
+                <a {...props} aria-label={props.children}>{props.children}</a>
             </Link>
         )
     }
@@ -18,7 +20,8 @@ const CustomLink = (props) => {
 
 const MDXComponents = {
     Image,
-    a: CustomLink
+    a: CustomLink,
+    CodePenEmbed,
 };
 
 export default MDXComponents;

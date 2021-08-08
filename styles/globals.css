@@ -9,12 +9,12 @@ body {
 
 @font-face {
   font-family: 'BioRhyme';
-  src: url('/fonts/BioRhyme/BioRhyme-Regular.ttf');
+  src: url('/fonts/BioRhyme/BioRhyme-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Space Mono';
-  src: url('/fonts/Space_Mono/SpaceMono-Regular.ttf');
+  src: url('/fonts/Space_Mono/SpaceMono-Regular.woff2') format('woff2');
 }
 
 h1,
@@ -50,7 +50,7 @@ h4 {
   @apply text-lg text-secondary-0;
 }
 
-.prose .anchor {
+/* .prose .anchor {
   @apply absolute invisible;
 
   margin-left: -1em;
@@ -71,7 +71,7 @@ h4 {
 
 .prose *:hover > .anchor {
   @apply visible no-underline;
-}
+} */
 
 .prose strong {
   @apply text-primary-0;
@@ -102,7 +102,7 @@ h4 {
 }
 
 .prose pre {
-  @apply border border-dracula-aro bg-secondary-0;
+  @apply border border-dracula-aro bg-dracula-nosferatu;
 }
 
 .prose code {

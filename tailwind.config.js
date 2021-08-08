@@ -7,7 +7,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // 'blue-opaque': 'rgb(13 42 148 / 18%)',
         // beige
         paperback: '#f3f3d8',
         // orange
@@ -21,18 +20,6 @@ module.exports = {
         // 'tertiary-200': '#5B8E7D',
         'tertiary-100': '#2C8C99',
         'tertiary-0': '#17494F',
-        // dracula colors
-        // 'dracula-darker': '#282a36',
-        // 'dracula-dark': '#44475a',
-        // 'dracula-light': '#f8f8f2',
-        // 'dracula-blue': '#6272a4',
-        // 'dracula-cyan': '#8be9fd',
-        // 'dracula-green': '#50fa7b',
-        // 'dracula-orange': '#ffb86c',
-        // 'dracula-pink': '#ff79c6',
-        // 'dracula-purple': '#bd93f9',
-        // 'dracula-red': '#ff5555',
-        // 'dracula-yellow': '#f1fa8c',
         'dracula-nosferatu': '#282a36',
         'dracula-aro': '#44475a',
         'dracula-cullen': '#f8f8f2',

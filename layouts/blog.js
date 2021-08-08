@@ -13,7 +13,7 @@ export default function BlogLayout({ children, frontMatter }) {
       date={new Date(frontMatter.publishedAt).toISOString()}
       type='article'
     >
-      <article className='flex flex-col justify-center items-start max-w-4xl mx-auto mb-8 w-full bg-paperback p-8 md:px-24'>
+      <article className='flex flex-col justify-center items-start max-w-4xl mx-auto w-full bg-paperback p-8 md:px-24'>
         {/* title */}
         <h1 className='font-bold text-3xl md:text-6xl mb-4 text-secondary-0 tracking-tight'>
           {frontMatter.title}
@@ -29,19 +29,18 @@ export default function BlogLayout({ children, frontMatter }) {
               src='/avatar.jpeg'
               className='rounded-full'
             ></Image>
-            <p className='text-gray-600 ml-4 flex flex-col md:flex-row '>
-              {/* {frontMatter.by} */}
-              <span>Arjun Puri /&nbsp;</span>
+            <p aria-label="author name, published at" className='text-gray-600 ml-4 flex flex-col md:flex-row '>
+              <span>Arjun Puri </span>
+              <span aria-hidden="true">&nbsp;/&nbsp;</span>
               <span>
                 {format(parseISO(frontMatter.publishedAt), 'dd MMMM, yyyy')}
               </span>
             </p>
           </div>
           {/* reading time and views */}
-          <p className='text-gray-500 min-w-32'>
+          <p className='text-gray-600 min-w-32'>
             {frontMatter.readingTime.text}
-            {/* placeholder */}
-            {` • `}
+            <span aria-hidden="true" >{` • `}</span>
             <ViewCounter slug={frontMatter.slug} />
           </p>
         </div>

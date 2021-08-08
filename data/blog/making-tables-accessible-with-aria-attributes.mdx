@@ -1,0 +1,132 @@
+---
+title: 'Making tables accessible using ARIA attributes'
+publishedAt: '2021-08-07'
+summary: "Everything I've learned through trial and error to make tables accessible in various screen readers."
+---
+
+## Table of Contents
+
+1.  [Introduction](/blog/making-tables-accessible-with-aria-attributes#introduction)
+2.  [ARIA attributes](/blog/making-tables-accessible-with-aria-attributes#aria-attributes)
+3.  [Accessible table with ARIA attributes](/blog/making-tables-accessible-with-aria-attributes#accessible-table-with-aria-attributes)
+4.  [Conclusion](/blog/making-tables-accessible-with-aria-attributes#conclusion)
+
+## Introduction
+
+Creating tables that are both conforming with your designs as well accessible is quite the task.
+
+That is why we might resort to either using `<div>` tags to create those sweet designs or create a table with all the correct semantic tags but then **break the semantics** by using `display: grid`.
+
+Yes you read it right, using any other display type other than the ones set by default on `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` will cause all semantics to break and hence leading to all sorts of weird screen reader behaviour.
+
+So if we can't use any other display types nor use just plain `<div>` tags to create our tables which are accessible then what's the solution?
+in comes...
+
+## ARIA attributes!
+
+**ARIA attributes** are basically a set of attributes that can be defined to **provide assistive technologies more information about any element in a HTML document.**
+These are especially **useful when we are creating custom components.**
+
+That being said ARIA attributes **should not be the first thing that you should go for**, instead it is much preferred to **use proper semantic HTML elements over using ARIA attributes.**
+
+Now, for our problem we have let's say created a table with `<div>` tags such as below:
+
+```html
+<div class="table">
+  <div class="table-header">
+    <div class="row">
+      <div class="column-header">Serial No.</div>
+      <div class="column-header">Fruit</div>
+      <div class="column-header">Quantity</div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="row">
+      <div class="cell">1</div>
+      <div class="cell">Apple</div>
+      <div class="cell">1099</div>
+    </div>
+    <div class="row">
+      <div class="cell">2</div>
+      <div class="cell">Mango</div>
+      <div class="cell">571</div>
+    </div>
+    <div class="row">
+      <div class="cell">3</div>
+      <div class="cell">Grapes</div>
+      <div class="cell">4943</div>
+    </div>
+  </div>
+</div>
+```
+
+Which looks like a table (atleast structurally) if we add some very basic CSS associated with those classes.
+
+<CodePenEmbed height="300" defaultTab="result" slugHash="PomxzrZ" user="arjun-puri"/>
+
+However right now this **only looks like a table visually**, but to a screen reader or any other assistive technology its just a series of nested `<div>` tags with **no semantic meaning.**
+
+Now onto making this accessible using ARIA attributes...
+
+## Accessible table with ARIA attributes
+
+```html
+<div role="table" aria-label="Fruit quantity table" class="table">
+  <div role="rowgroup" class="table-header">
+    <div role="row" class="row">
+      <div role="columnheader" class="column-header">Serial No.</div>
+      <div role="columnheader" class="column-header">Fruit</div>
+      <div role="columnheader" class="column-header">Quantity</div>
+    </div>
+  </div>
+  <div role="rowgroup" class="table-body">
+    <div role="row" class="row">
+        <div role="cell" class="cell">1</div>
+        <div role="cell" class="cell">Apple</div>
+        <div role="cell" class="cell">1099</div>
+    </div>
+    <div role="row" class="row">
+        <div role="cell" class="cell">2</div>
+        <div role="cell" class="cell">Mango</div>
+        <div role="cell" class="cell">571</div>
+    </div>
+    <div role="row" class="row">
+        <div role="cell" class="cell">3</div>
+        <div role="cell" class="cell">Grapes</div>
+        <div role="cell" class="cell">4943</div>
+    </div>
+  </div>
+</div>
+```
+
+<CodePenEmbed height="300" defaultTab="result" slugHash="dyWQRKw" user="arjun-puri"/>
+
+After adding the role attribute and the aria-label this table is quite accessible and caries actual meaning for assistive technologies.
+
+`role` attribute **defines what is the use or "role" of an element in the DOM.** Before these `<div>` tags had no roles and hence carried no meaning as to what they exactly are doing here.
+
+`aria-label` **defines a label for the screen reader to read.** In this case this aria-label sort of gives a name to the table so that the user may know what information is available in this particular table.
+
+One may instead use an `aria-labelledBy` **if there is already a heading which is visually acting as a label** for the table by passing in the `id` of that element.
+Something like...
+
+```html
+<h2 id="tableHeading">Fruit quantity table</h2>
+<div role="table" aria-labelledBy="tableHeading" class="table">
+... rest of the code remains same ...
+</div>
+```
+
+## Conclusion
+
+Now, no need to take my word for it that this table is accessible.
+You should **put it to the test using one of the many screen readers available.**
+
+Some of the popular ones are:
+
+- Voiceover on MAC OSX
+- Voiceover on iOS
+- NVDA on Windows
+- Talkback on Android
+
+Hope this helps you in your journey to make the web a little bit more accessible! 

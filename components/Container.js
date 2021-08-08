@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-
-// import Footer from '@/components/Footer';
+import Footer from '@/components/Footer';
 
 export default function Container(props) {
   const { children, ...customMeta } = props;
@@ -13,7 +12,6 @@ export default function Container(props) {
   const meta = {
     title: 'Arjun Puri – Developer, writer',
     description: `Front-end developer`,
-    // image: 'https://leerob.io/static/images/banner.png', //change this
     type: 'website',
     ...customMeta,
   };
@@ -38,13 +36,12 @@ export default function Container(props) {
         <meta property='og:site_name' content='Arjun Puri' />
         <meta property='og:description' content={meta.description} />
         <meta property='og:title' content={meta.title} />
-        {/* <meta property='og:image' content={meta.image} /> */}
         {meta.date && (
           <meta property='article:published_time' content={meta.date} />
         )}
       </Head>
       {/* outer div is to keep it in a fixed width on mobiles */}
-      <div className='sticky z- top-0 flex flex-col justify-center px-4 md:p-0 md:mx-4 bg-secondary-100'>
+      <div className='sticky z-10 top-0 flex flex-col justify-center px-4 md:p-0 md:mx-4 bg-secondary-100'>
         <nav className='flex items-center justify-between w-full max-w-4xl p-0 mx-auto my-0 bg-paperback sticky-nav md:mt-8'>
           {/* skip to content navigation link */}
           <a href='#mainContent' className='skip-nav sr-only'>
@@ -57,23 +54,18 @@ export default function Container(props) {
             </h1>
           </div>
           {/* hamburger button */}
-          <button className='md:hidden px-8' onClick={hamburgerBtnHandler}>
+          <button className='md:hidden px-8' onClick={hamburgerBtnHandler} aria-label='menu button'>
             <FontAwesomeIcon size={'2x'} className="text-tertiary-0 fa-fw transition-all duration-300" icon={hamburgerClicked ? faTimes :faBars}/>
           </button>
           <div className={`bg-primary-100 fixed overflow-hidden top-16 py-4 right-4 flex flex-col w-32  rounded-l-full ${hamburgerClicked ? 'visible' : 'w-0 invisible'} md:p-2 md:w-full md:static md:visible md:bg-paperback items-center justify-center md:flex-row transition-all duration-500 `}> 
-            <Link href='/blog'>
-              <a className='pr-4 pl-8 py-2 md:px-8 text-paperback md:text-tertiary-100 font-bold md:text-xl '>
-                Blog
-              </a>
-            </Link>
-            <Link href='/about'>
-            <a className='pr-4 pl-8 py-2 md:px-8 text-paperback md:text-tertiary-100 font-bold md:text-xl '>
-                About
-              </a>
-            </Link>
             <Link href='/'>
             <a className='pr-4 pl-8 py-2 md:px-8 text-paperback md:text-tertiary-100 font-bold md:text-xl '>
                 Home
+              </a>
+            </Link>
+            <Link href='https://arjunpuri.me'>
+            <a className='pr-4 pl-8 py-2 md:px-8 text-paperback md:text-tertiary-100 font-bold md:text-xl '>
+                About
               </a>
             </Link>
           </div>
@@ -84,7 +76,7 @@ export default function Container(props) {
         className='flex flex-col justify-center px-4 bg-secondary-100'
       >
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </section>
   );
