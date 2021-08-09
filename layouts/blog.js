@@ -31,7 +31,7 @@ export default function BlogLayout({ children, frontMatter }) {
             ></Image>
             <p aria-label="author name, published at" className='text-gray-600 ml-4 flex flex-col md:flex-row '>
               <span>Arjun Puri </span>
-              <span aria-hidden="true">&nbsp;/&nbsp;</span>
+              <span aria-hidden="true" className="hidden md:inline-block">&nbsp;/&nbsp;</span>
               <span>
                 {format(parseISO(frontMatter.publishedAt), 'dd MMMM, yyyy')}
               </span>

@@ -1,19 +1,14 @@
 {
-  "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "../../WebDev_Stuff/Templates/html5up-future-imperfect"
-	},
-	{
-		"path": "../../WebDev_Stuff/Templates/Bootstrap/bootstrap-5.0.2-examples/blog"
-	},
-	{
-		"path": "../../External_Git_Repos/leerob.io"
-	}
-],
-"settings": {
-	"liveServer.settings.multiRootWorkspaceName": "blog"
-}
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../playground"
+		},
+		{
+			"path": "../../../external_repos/leerob.io"
+		}
+	],
+	"settings": {}
 }
