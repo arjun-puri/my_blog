@@ -8,18 +8,18 @@ export default function Footer() {
     <footer className="flex flex-col gap-4 justify-between max-w-4xl mx-auto w-full p-8 md:px-24 bg-paperback border-t-2 border-dashed border-gray-500 ">
         <div className="flex justify-start">
             <Link href="https://github.com/arjun-puri">
-                <a rel="github">
-                    <FontAwesomeIcon className="mr-4 text-secondary-0" icon={ faGithubAlt } size="2x" />
+                <a aria-label="github" rel="github">
+                    <FontAwesomeIcon aria-hidden="true" className="mr-4 text-secondary-0" icon={ faGithubAlt } size="2x" />
                 </a>
             </Link>
             <Link href="https://www.linkedin.com/in/arjun-puri-8ab9b916a/">
-                <a rel="linkedin">
-                    <FontAwesomeIcon className="mr-4 text-secondary-0" icon={ faLinkedinIn } size="2x" />
+                <a aria-label="linkedin" rel="linkedin">
+                    <FontAwesomeIcon aria-hidden="true" className="mr-4 text-secondary-0" icon={ faLinkedinIn } size="2x" />
                 </a>
             </Link>
             <Link href="mailto:arjunpuri@arjunpuri.me">
-                <a rel="email">
-                    <FontAwesomeIcon className="mr-4 text-secondary-0" icon={ faEnvelope } size="2x" />
+                <a aria-label="email" rel="email">
+                    <FontAwesomeIcon aria-hidden="true" className="mr-4 text-secondary-0" icon={ faEnvelope } size="2x" />
                 </a>
             </Link>
         </div>
