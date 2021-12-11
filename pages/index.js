@@ -10,7 +10,7 @@ export default function Home() {
         </h1>
         <h2 className='prose md:text-xl mb-16 text-tertiary-0'>
           I am a front end developer and a video game enthusiast.
-          Currently working as a Junior Associate at Publicis Sapient.
+          Currently working as a Associate Technology L1 at Publicis Sapient.
         </h2>
         <h3 className='font-bold mb-2 text-xl md:text-4xl text-secondary-0'>
           Recent Posts
